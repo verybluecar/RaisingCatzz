@@ -1,41 +1,46 @@
 using UnityEngine;
-
+using System.Collections;
 public class CatController : MonoBehaviour
 {
-    [SerializeField] private float roamRadius = 15f; // the radius the cat should roam within
-    [SerializeField] private float moveSpeed = 3f; // the speed at which the cat should move
-    [SerializeField] private float rotateSpeed = 5f; // the speed at which the cat should rotate
-    private Vector3 targetPosition; // the position the cat is currently moving towards
+    [SerializeField] private float roamRadius = 15f;
+    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float rotateSpeed = 5f;
+    [SerializeField] private float maxJumpDistance = 5f;
+    [SerializeField] private AudioClip meowClip;
+    private Vector3 targetPosition;
 
     private void Start()
     {
         targetPosition = GetRandomPositionWithinRoamRadius();
+        StartCoroutine(PlayMeowEveryMinute());
     }
 
     private void Update()
     {
-        // calculate the direction and distance to the target position
         Vector3 directionToTarget = (targetPosition - transform.position).normalized;
         float distanceToTarget = Vector3.Distance(transform.position, targetPosition);
 
-        // rotate towards the target position
+        if (IsGrounded() && distanceToTarget <= maxJumpDistance)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            targetPosition = transform.position;
+        }
+
         if (distanceToTarget > 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
         }
 
-        // move towards the target position
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-
-        // if we've reached the target position, set a new one
         if (distanceToTarget < 0.1f)
         {
             targetPosition = GetRandomPositionWithinRoamRadius();
         }
     }
 
-    // get a random position within the roam radius
     private Vector3 GetRandomPositionWithinRoamRadius()
     {
         Vector2 randomCircle = Random.insideUnitCircle * roamRadius;
@@ -43,7 +48,16 @@ public class CatController : MonoBehaviour
         return transform.position + randomPosition;
     }
 
-    // draw the roam radius gizmo in the editor
+    private bool IsGrounded()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.0f))
+        {
+            return true;
+        }
+        return false;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, roamRadius);
@@ -54,7 +68,16 @@ public class CatController : MonoBehaviour
         targetPosition = destination;
     }
 
+    private IEnumerator PlayMeowEveryMinute()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(60f);
+            AudioSource.PlayClipAtPoint(meowClip, transform.position);
+        }
+    }
 }
+
 
 
 
