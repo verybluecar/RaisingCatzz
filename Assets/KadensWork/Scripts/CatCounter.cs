@@ -28,7 +28,27 @@ public class CatCounter : MonoBehaviour
             timeSinceLastUpdate = 0f;
         }
     }
+
+    public void SubtractMoney(float amount)
+    {
+        if (moneyAmount >= amount)
+        {
+            moneyAmount -= amount;
+            moneyText.text = "$" + Mathf.Round(moneyAmount).ToString();
+        }
+        else
+        {
+            Debug.LogWarning("Not enough money to subtract!");
+        }
+    }
+
+    public float MoneyAmount
+    {
+        get { return moneyAmount; }
+    }
 }
+
+
 
 
 

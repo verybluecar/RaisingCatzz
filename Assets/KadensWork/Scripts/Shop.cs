@@ -8,6 +8,8 @@ public class Shop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene("Shop");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
