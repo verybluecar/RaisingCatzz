@@ -46,8 +46,6 @@ public class CatCounter : MonoBehaviour
     {
         get { return moneyAmount; }
     }
-    
-
 }
 
 

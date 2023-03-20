@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 744939265234996759}
   - component: {fileID: 744939265234996767}
   - component: {fileID: 744939265234996766}
-  - component: {fileID: 3778458819530851713}
   m_Layer: 3
   m_Name: Cat
   m_TagString: Cat
@@ -119,7 +118,9 @@ MonoBehaviour:
   catController: {fileID: 744939265234996753}
   needsInterval: 10
   foodLocation: {fileID: 0}
+  bathroomLocation: {fileID: 0}
   catAnimator: {fileID: 744939265234996759}
+  needsActive: 0
   isHungry: 0
   needsToUseBathroom: 0
 --- !u!114 &744939265234996753
@@ -285,15 +286,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statisticsText: {fileID: 0}
   moneyText: {fileID: 0}
---- !u!114 &3778458819530851713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744939265234996756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5efbb2db812ecf34bab0039164cbdb7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

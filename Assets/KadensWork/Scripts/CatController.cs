@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-
 public class CatController : MonoBehaviour
 {
     [SerializeField] private float roamRadius = 15f;
@@ -8,15 +7,12 @@ public class CatController : MonoBehaviour
     [SerializeField] private float rotateSpeed = 5f;
     [SerializeField] private float maxJumpDistance = 5f;
     [SerializeField] private AudioClip meowClip;
-
     private Vector3 targetPosition;
-    private Rigidbody rb;
 
     private void Start()
     {
         targetPosition = GetRandomPositionWithinRoamRadius();
         StartCoroutine(PlayMeowEveryMinute());
-        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -24,27 +20,8 @@ public class CatController : MonoBehaviour
         Vector3 directionToTarget = (targetPosition - transform.position).normalized;
         float distanceToTarget = Vector3.Distance(transform.position, targetPosition);
 
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f))
-        {
-            // if about to collide with a wall, turn away from the wall
-            if (hit.collider.CompareTag("Wall"))
-            {
-                targetPosition = GetRandomPositionWithinRoamRadius();
-                return;
-            }
-        }
-
         if (IsGrounded() && distanceToTarget <= maxJumpDistance)
         {
-            // if about to fall off an edge, turn away from the edge
-            if (!Physics.Raycast(transform.position, -transform.up, 0.5f))
-            {
-                targetPosition = GetRandomPositionWithinRoamRadius();
-                return;
-            }
-
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
         else
@@ -100,7 +77,6 @@ public class CatController : MonoBehaviour
         }
     }
 }
-
 
 
 

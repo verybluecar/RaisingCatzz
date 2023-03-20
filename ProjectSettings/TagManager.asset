@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Cat
   - Button
-  - Wall
   layers:
   - Default
   - TransparentFX
@@ -14,7 +13,7 @@ TagManager:
   - Cat
   - Water
   - UI
-  - Wall
+  - 
   - 
   - 
   - 
