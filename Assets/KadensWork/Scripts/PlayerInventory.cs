@@ -42,6 +42,8 @@ public class PlayerInventory : MonoBehaviour
             // Enable or disable the MouseLook and PlayerMove scripts
             mouseLook.enabled = !canvasActive;
             playerMove.enabled = !canvasActive;
+
+            
         }
     }
 }
