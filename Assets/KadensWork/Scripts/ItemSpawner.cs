@@ -6,14 +6,16 @@ public class ItemSpawner : MonoBehaviour
     public GameObject itemPrefab;
     public TextMeshProUGUI bowlCountText;
     public int costPerItem = 1;
-    public Transform spawnPoint;
+    public Transform handTransform;
 
     public void SpawnItem()
     {
         int currentCount = int.Parse(bowlCountText.text);
         if (currentCount >= costPerItem)
         {
-            Instantiate(itemPrefab, spawnPoint.position, Quaternion.identity);
+            GameObject item = Instantiate(itemPrefab, handTransform.position, handTransform.rotation);
+            item.GetComponent<Rigidbody>().isKinematic = true;
+            item.transform.SetParent(handTransform);
             currentCount -= costPerItem;
             bowlCountText.text = currentCount.ToString();
         }
@@ -22,4 +24,14 @@ public class ItemSpawner : MonoBehaviour
             Debug.Log("Not enough bowls to spawn an item!");
         }
     }
+
+    public void OnButtonClick()
+    {
+        SpawnItem();
+    }
 }
+
+
+
+
+

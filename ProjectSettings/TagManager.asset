@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Cat
   - Button
-  - Camera
   layers:
   - Default
   - TransparentFX
