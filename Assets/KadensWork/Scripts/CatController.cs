@@ -9,6 +9,8 @@ public class CatController : MonoBehaviour
     [SerializeField] private AudioClip meowClip;
     private Vector3 targetPosition;
 
+
+    public int howOftenMeow;
     private void Start()
     {
         targetPosition = GetRandomPositionWithinRoamRadius();
@@ -72,7 +74,7 @@ public class CatController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(60f);
+            yield return new WaitForSeconds(howOftenMeow);
             AudioSource.PlayClipAtPoint(meowClip, transform.position);
         }
     }
