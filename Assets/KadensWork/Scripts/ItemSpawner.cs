@@ -8,20 +8,23 @@ public class ItemSpawner : MonoBehaviour
     public int costPerItem = 1;
     public Transform handTransform;
 
+    private bool isBowlSpawned = false;
+
     public void SpawnItem()
     {
         int currentCount = int.Parse(bowlCountText.text);
-        if (currentCount >= costPerItem)
+        if (!isBowlSpawned && currentCount >= costPerItem)
         {
             GameObject item = Instantiate(itemPrefab, handTransform.position, handTransform.rotation);
             item.GetComponent<Rigidbody>().isKinematic = true;
             item.transform.SetParent(handTransform);
             currentCount -= costPerItem;
             bowlCountText.text = currentCount.ToString();
+            isBowlSpawned = true;
         }
         else
         {
-            Debug.Log("Not enough bowls to spawn an item!");
+            Debug.Log("Not enough bowls to spawn an item or a bowl is already spawned!");
         }
     }
 
@@ -29,7 +32,14 @@ public class ItemSpawner : MonoBehaviour
     {
         SpawnItem();
     }
+
+    // Call this function when the spawned bowl is picked up
+    public void BowlPickedUp()
+    {
+        isBowlSpawned = false;
+    }
 }
+
 
 
 
