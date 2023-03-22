@@ -17,7 +17,15 @@ public class PlaceItem : MonoBehaviour
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
-                transform.position = handTransform.TransformPoint(hitInfo.point);
+                if (transform.childCount > 0)
+                {
+                    Transform childTransform = transform.GetChild(0);
+                    childTransform.position = handTransform.TransformPoint(hitInfo.point);
+                }
+                else
+                {
+                    transform.position = handTransform.TransformPoint(hitInfo.point);
+                }
             }
         }
     }
