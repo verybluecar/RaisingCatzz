@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cat
   - Button
+  - Ground
   layers:
   - Default
   - TransparentFX

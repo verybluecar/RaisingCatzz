@@ -12,12 +12,14 @@ public class Shop : MonoBehaviour
     private LookStats lookStats;
     private PlayerMove playerMove;
     private Camera cameraa;
+    public Canvas popupCanvas;
 
     private void Start()
     {
         ShopCanvas.gameObject.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
         cameraa = Camera.main;
+        popupCanvas.enabled = false;
 
         mouseLook = cameraa.GetComponent<mouseLook>();
         lookStats = player.GetComponent<LookStats>();
@@ -29,6 +31,7 @@ public class Shop : MonoBehaviour
         if (Shopping && Input.GetKeyDown(KeyCode.E))
         {
             ShopCanvas.gameObject.SetActive(!ShopCanvas.gameObject.activeSelf);
+            popupCanvas.enabled = false;
 
             if (ShopCanvas.gameObject.activeSelf)
             {
@@ -43,7 +46,7 @@ public class Shop : MonoBehaviour
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-
+                popupCanvas.enabled = true;
                 mouseLook.enabled = true;
                 lookStats.enabled = true;
                 playerMove.enabled = true;
@@ -56,6 +59,7 @@ public class Shop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Shopping = true;
+            popupCanvas.enabled = true;
         }
     }
 
@@ -68,6 +72,7 @@ public class Shop : MonoBehaviour
             mouseLook.enabled = true;
             lookStats.enabled = true;
             playerMove.enabled = true;
+            popupCanvas.enabled = false;
         }
     }
 }
