@@ -4,7 +4,7 @@ public class ESCMenu : MonoBehaviour
 {
     public Canvas escMenuCanvas;
     public GameObject player;
-    public GameObject camera;
+    public GameObject mainCamera;
 
     private bool _isOpen = false;
     private CursorLockMode _previousLockMode;
@@ -32,7 +32,7 @@ public class ESCMenu : MonoBehaviour
         }
     }
 
-    private void OpenESCMenu()
+    public void OpenESCMenu()
     {
         // Enable the canvas
         escMenuCanvas.enabled = true;
@@ -47,10 +47,10 @@ public class ESCMenu : MonoBehaviour
 
         // Disable player and camera movement
         player.GetComponent<PlayerMove>().enabled = false;
-        camera.GetComponent<mouseLook>().enabled = false;
+        mainCamera.GetComponent<mouseLook>().enabled = false;
     }
 
-    private void CloseESCMenu()
+    public void CloseESCMenu()
     {
         // Disable the canvas
         escMenuCanvas.enabled = false;
@@ -64,6 +64,7 @@ public class ESCMenu : MonoBehaviour
 
         // Enable player and camera movement
         player.GetComponent<PlayerMove>().enabled = true;
-        camera.GetComponent<mouseLook>().enabled = true;
+        mainCamera.GetComponent<mouseLook>().enabled = true;
     }
 }
+

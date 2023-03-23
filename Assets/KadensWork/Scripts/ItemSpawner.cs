@@ -46,7 +46,7 @@ public class ItemSpawner : MonoBehaviour
                 return;
             }
 
-            spawnedItem = Instantiate(itemPrefab, handTransform.position, Quaternion.identity);
+            spawnedItem = Instantiate(itemPrefab, handTransform.position, handTransform.rotation);
             spawnedItem.GetComponent<Rigidbody>().isKinematic = true;
             spawnedItem.transform.SetParent(handTransform);
             currentCount -= costPerItem;
@@ -58,7 +58,6 @@ public class ItemSpawner : MonoBehaviour
             Debug.Log("Not enough bowls to spawn an item!");
         }
     }
-
 
 
     public void OnButtonClick()
