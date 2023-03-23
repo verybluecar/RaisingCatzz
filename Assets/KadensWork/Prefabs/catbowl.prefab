@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1312780384240666668}
   - component: {fileID: 3160317127995660204}
   - component: {fileID: 8619736547091465515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: catbowl
-  m_TagString: Untagged
+  m_TagString: Pickupable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
