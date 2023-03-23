@@ -34,8 +34,7 @@ public class CanvasSwitch : MonoBehaviour
         canvas.gameObject.SetActive(false);
 
         // Enable player and camera movement
-        player.GetComponent<PlayerMove>().enabled = true;
-        camera.GetComponent<mouseLook>().enabled = true;
+        
     }
 }
 
