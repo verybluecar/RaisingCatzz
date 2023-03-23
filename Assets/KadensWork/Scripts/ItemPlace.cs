@@ -2,23 +2,32 @@ using UnityEngine;
 
 public class ItemPlace : MonoBehaviour
 {
-    public Transform handObjectTransform;
-    public LayerMask layerMask;
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            // Raycast from camera to mouse position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask))
+            if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.transform.IsChildOf(handObjectTransform))
+                // Check if the hit object is on the "Ground" layer
+                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
                 {
-                    Transform spawnedObjectTransform = handObjectTransform.GetChild(0);
-                    spawnedObjectTransform.SetParent(null);
-                    spawnedObjectTransform.GetComponent<Rigidbody>().isKinematic = false;
+                    // Loop through all child objects of this object
+                    foreach (Transform child in transform)
+                    {
+                        // Set the child's position to the hit point
+                        child.position = hit.point;
+
+                        // Make the child object unparented
+                        child.parent = null;
+                    }
                 }
             }
         }
     }
 }
+
+
+
