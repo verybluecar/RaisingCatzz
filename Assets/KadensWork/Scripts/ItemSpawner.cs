@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class ItemSpawner : MonoBehaviour
 {
@@ -12,10 +13,31 @@ public class ItemSpawner : MonoBehaviour
     private bool isBowlSpawned = false;
     private GameObject spawnedItem;
 
+    private IEnumerator CheckForChildObject()
+    {
+        while (true)
+        {
+            if (handTransform.childCount == 0)
+            {
+                // Allow spawning of another item
+                isBowlSpawned = false;
+            }
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    private void Start()
+    {
+        // Start the coroutine to check for child object every second
+        StartCoroutine(CheckForChildObject());
+    }
+
     public void SpawnItem()
     {
         int currentCount = int.Parse(bowlCountText.text);
-        if (!isBowlSpawned && currentCount >= costPerItem)
+        isBowlSpawned = false; // reset the flag
+
+        if (currentCount >= costPerItem)
         {
             // Check if there is a child object in the handTransform
             if (handTransform.childCount > 0)
@@ -33,9 +55,10 @@ public class ItemSpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough bowls to spawn an item or a bowl is already spawned!");
+            Debug.Log("Not enough bowls to spawn an item!");
         }
     }
+
 
     public void OnButtonClick()
     {
@@ -72,6 +95,7 @@ public class ItemSpawner : MonoBehaviour
         }
     }
 }
+
 
 
 
