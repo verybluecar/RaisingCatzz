@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Cat
   - Button
+  - Ground
+  - Pickupable
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - Cat
   - Water
   - UI
-  - 
-  - 
+  - Ground
+  - Pickupable
   - 
   - 
   - 
