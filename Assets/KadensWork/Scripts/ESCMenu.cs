@@ -47,7 +47,7 @@ public class ESCMenu : MonoBehaviour
 
         // Disable player and camera movement
         player.GetComponent<PlayerMove>().enabled = false;
-        mainCamera.GetComponent<mouseLook>().enabled = false;
+        mainCamera.GetComponent<MouseLook>().enabled = false;
     }
 
     public void CloseESCMenu()
@@ -64,7 +64,8 @@ public class ESCMenu : MonoBehaviour
 
         // Enable player and camera movement
         player.GetComponent<PlayerMove>().enabled = true;
-        mainCamera.GetComponent<mouseLook>().enabled = true;
+        mainCamera.GetComponent<MouseLook>().enabled = true;
     }
 }
+
 

@@ -25,7 +25,7 @@ public class CanvasSwitch : MonoBehaviour
 
         // Disable player and camera movement
         player.GetComponent<PlayerMove>().enabled = false;
-        camera.GetComponent<mouseLook>().enabled = false;
+        camera.GetComponent<MouseLook>().enabled = false;
     }
 
     public void DeactivateCanvas()

@@ -8,7 +8,7 @@ public class Shop : MonoBehaviour
 
     private GameObject player;
 
-    private mouseLook mouseLook;
+    private MouseLook mouseLook;
     private LookStats lookStats;
     private PlayerMove playerMove;
     private Camera cameraa;
@@ -21,7 +21,7 @@ public class Shop : MonoBehaviour
         cameraa = Camera.main;
         popupCanvas.enabled = false;
 
-        mouseLook = cameraa.GetComponent<mouseLook>();
+        mouseLook = cameraa.GetComponent<MouseLook>();
         lookStats = player.GetComponent<LookStats>();
         playerMove = player.GetComponent<PlayerMove>();
     }
@@ -76,6 +76,7 @@ public class Shop : MonoBehaviour
         }
     }
 }
+
 
 
 
