@@ -14,14 +14,16 @@ public class CatRoam : MonoBehaviour
     public bool hungry;
     public GameObject foodBowl;
 
-    public bool bathroom;
+    public bool potty;
     public GameObject litterbox;
 
     void Start()
     {
+       
         agent = GetComponent<NavMeshAgent>();
         foodBowl = GameObject.Find("foodBowl");
-        bathroom = GameObject.Find("LitterBox");
+        litterbox = GameObject.Find("LitterBox");
+        
     }
 
 
@@ -40,12 +42,15 @@ public class CatRoam : MonoBehaviour
         if (hungry == true)
         {
             agent.SetDestination(foodBowl.transform.position);
+            StartCoroutine(ResetHungry());
         }
 
-        if (bathroom == true)
+        if (potty == true)
         {
-            agent.SetDestination(foodBowl.transform.position);
+            agent.SetDestination(litterbox.transform.position);
+            
         }
+        
 
     }
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
@@ -63,5 +68,9 @@ public class CatRoam : MonoBehaviour
         return false;
     }
 
-
+    IEnumerator ResetHungry()
+    {
+        yield return new WaitForSeconds(5f);
+        hungry = false;
+    }
 }
