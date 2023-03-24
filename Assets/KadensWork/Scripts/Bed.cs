@@ -14,11 +14,16 @@ public class Bed : MonoBehaviour
     private bool canSleep = false;
     private int daysSlept = 0;
 
+   
+
     public void Start()
     {
         // Set canvas and text to inactive
         sleepCanvas.SetActive(false);
         daysText.gameObject.SetActive(true);
+        
+        
+
     }
 
     // Update is called once per frame
@@ -48,6 +53,8 @@ public class Bed : MonoBehaviour
 
                 // Set time to 8
                 lightingManager.TimeOfDay = 8f;
+
+                
             }
         }
     }
