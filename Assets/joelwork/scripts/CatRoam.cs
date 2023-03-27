@@ -42,7 +42,7 @@ public class CatRoam : MonoBehaviour
         if (hungry == true)
         {
             agent.SetDestination(foodBowl.transform.position);
-            StartCoroutine(ResetHungry());
+            
         }
 
         if (potty == true)
@@ -53,6 +53,19 @@ public class CatRoam : MonoBehaviour
         
 
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("CatFood"))
+        {
+            StartCoroutine(ResetHungry());
+            
+        }
+    }
+
+
+
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
 
