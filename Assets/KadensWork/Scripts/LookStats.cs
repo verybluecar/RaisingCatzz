@@ -8,6 +8,8 @@ public class LookStats : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         catCanvas.gameObject.SetActive(false);
 
     }

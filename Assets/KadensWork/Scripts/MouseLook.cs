@@ -12,11 +12,12 @@ public class MouseLook : MonoBehaviour
 
     void Start()
     {
+       
         mouseSensitivity = PlayerPrefs.GetFloat("currentSensitivity", 5);
         slider.minValue = 100;
-        slider.maxValue = 1500;
+        slider.maxValue = 500;
         slider.value = mouseSensitivity;
-        Cursor.lockState = CursorLockMode.Locked;
+        
 
         // Add an event listener to the slider's onValueChanged event
         slider.onValueChanged.AddListener(AdjustSpeed);
@@ -24,8 +25,8 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.fixedDeltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.fixedDeltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
