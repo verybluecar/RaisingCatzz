@@ -7,6 +7,9 @@ TagManager:
   - Cat
   - Button
   - CatFood
+  - Pickupable
+  - Ground
+  - LootBoxShop
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - Cat
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

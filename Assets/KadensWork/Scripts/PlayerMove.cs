@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 12f;
+    public Canvas LootBoxCanvas;
     
    
 
@@ -14,7 +16,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        LootBoxCanvas.enabled = false;
     }
 
     // Update is called once per frame
@@ -39,5 +41,24 @@ public class PlayerMove : MonoBehaviour
         controller.Move(veclocity * Time.deltaTime);
 
        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("LootBoxShop"))
+        {
+            LootBoxCanvas.enabled = true;
+            Cursor.lockState = CursorLockMode.None;
+            Debug.Log("working e canvas thing");
+        }
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("LootBoxShop"))
+        {
+            LootBoxCanvas.enabled = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 }

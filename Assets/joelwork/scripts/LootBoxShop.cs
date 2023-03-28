@@ -19,10 +19,8 @@ public class LootBoxShop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && (Input.GetKeyDown(KeyCode.E)))
-        {
-            LootBoxCanvas.enabled = true;
-        }
+        
+        
 
     }
 }
