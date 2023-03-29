@@ -48,6 +48,7 @@ public class PlayerMove : MonoBehaviour
         {
             LootBoxCanvas.enabled = true;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             Debug.Log("working e canvas thing");
         }
         

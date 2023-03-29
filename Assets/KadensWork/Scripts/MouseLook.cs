@@ -14,8 +14,8 @@ public class MouseLook : MonoBehaviour
     {
        
         mouseSensitivity = PlayerPrefs.GetFloat("currentSensitivity", 5);
-        slider.minValue = 100;
-        slider.maxValue = 500;
+        slider.minValue = 10;
+        slider.maxValue = 300;
         slider.value = mouseSensitivity;
         
 
