@@ -364,6 +364,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103474193}
   m_CullTransparentMesh: 1
+--- !u!4 &126975584 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1832207768218249255, guid: b492cb34351b54b4fb898e240550caf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1832207767424610444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &134283401
 GameObject:
   m_ObjectHideFlags: 0
@@ -9702,6 +9708,11 @@ PrefabInstance:
       objectReference: {fileID: 420372563}
     - target: {fileID: 1832207766203610739, guid: b492cb34351b54b4fb898e240550caf3,
         type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 126975584}
+    - target: {fileID: 1832207766203610739, guid: b492cb34351b54b4fb898e240550caf3,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -9720,6 +9731,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1832207766963917147, guid: b492cb34351b54b4fb898e240550caf3,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 6781335928490198945}
     - target: {fileID: 1832207766963917147, guid: b492cb34351b54b4fb898e240550caf3,
         type: 3}
       propertyPath: LootBoxCanvas
@@ -11001,25 +11017,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4496240415372700761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4496240415372700763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5671e3149ee5e4fa3101f2c78a002a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 4496240415372700760}
-  range: 100
-  centrePoint: {fileID: 309152018}
-  hungry: 0
-  foodBowl: {fileID: 0}
-  potty: 0
-  litterbox: {fileID: 4496240415448650182}
 --- !u!1 &4496240415372700763
 GameObject:
   m_ObjectHideFlags: 0
@@ -11033,7 +11030,6 @@ GameObject:
   - component: {fileID: 4496240415372700759}
   - component: {fileID: 4496240415372700758}
   - component: {fileID: 4496240415372700765}
-  - component: {fileID: 4496240415372700761}
   - component: {fileID: 4496240415372700754}
   - component: {fileID: 4496240415372700760}
   - component: {fileID: 4496240415372700755}
@@ -12262,6 +12258,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a8bcbdf13b8324c85ad05b8f051621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!143 &6781335928490198945 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 5148012778947000084, guid: b492cb34351b54b4fb898e240550caf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1832207767424610444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6783200273078574755
 Transform:
   m_ObjectHideFlags: 0
