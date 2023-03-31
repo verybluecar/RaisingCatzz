@@ -2,7 +2,13 @@ fileFormatVersion: 2
 guid: 4db78a7621e359b4b825fce1618a0ba0
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 2171783102144411303
+    second: Watering_Can|Watering_CanAction
+  - first:
+      74: -8778360879566222442
+    second: Watering_Can|Watering_CanAction.001
   externalObjects: {}
   materials:
     materialImportMode: 2
