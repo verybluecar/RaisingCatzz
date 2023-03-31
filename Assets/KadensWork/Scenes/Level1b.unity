@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44871372, g: 0.4987706, b: 0.57568383, a: 1}
+  m_IndirectSpecularColor: {r: 0.18189532, g: 0.22757511, b: 0.30741683, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: bc7adffba2db8034a86c70d043dab938, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1d8dd56843f31eb46b97adc6b01161a7, type: 2}
 --- !u!65 &4719779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1709,6 +1709,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &252903400
 GameObject:
   m_ObjectHideFlags: 0
@@ -6019,7 +6027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b29295678d740a93f37041cb47cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 6981885454072989178, guid: 83f4f057895113346bac8a4e9bbdb220,
+  itemPrefab: {fileID: 3248481402673879523, guid: b0f08c995fa71dc4ebdc6e80745344bd,
     type: 3}
   bowlCountText: {fileID: 736927931}
   costPerItem: 1
@@ -7998,7 +8006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b29295678d740a93f37041cb47cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 664020076783708665, guid: 4e49f4816f0844e4a9f9a0ad094c1f0d,
+  itemPrefab: {fileID: 6147107491698722631, guid: e6e12cc2fc90c18448ebf6184460d890,
     type: 3}
   bowlCountText: {fileID: 252903402}
   costPerItem: 1
@@ -11271,7 +11279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af5591f6be5ea445b26f3bf8cfe286e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 25
+  lookRadius: 3
   attackDistance: 5
 --- !u!195 &1921105894
 NavMeshAgent:
@@ -11344,7 +11352,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2efeeffcf95e488458769357850a8d78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11382,7 +11390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921105892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -227.3, y: 2.49, z: 8.05}
+  m_LocalPosition: {x: -222.34, y: 2.49, z: 8.05}
   m_LocalScale: {x: 1, y: 3.7163, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12278,7 +12286,7 @@ GameObject:
   m_Name: Floor
   m_TagString: Ground
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
+  m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!54 &2023807376
@@ -19609,6 +19617,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &5424774324611481852
 GameObject:
   m_ObjectHideFlags: 0
