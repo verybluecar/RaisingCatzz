@@ -7,6 +7,15 @@ TagManager:
   - Cat
   - Button
   - CatFood
+  - Ground
+  - Pickupable
+  - Stair
+  - foodBowl
+  - litterBox
+  - Smallish
+  - Medium
+  - Large
+  - xLarge
   layers:
   - Default
   - TransparentFX
@@ -14,8 +23,8 @@ TagManager:
   - Cat
   - Water
   - UI
-  - 
-  - 
+  - Ground
+  - Pickupable
   - 
   - 
   - 

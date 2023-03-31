@@ -6,7 +6,9 @@ public class PlayerMove : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 12f;
-    
+    public float gravity = -9.81f;
+
+    Vector3 velocity;
    
 
     Vector3 veclocity;
@@ -38,6 +40,9 @@ public class PlayerMove : MonoBehaviour
         //will move the controller down to what the gravity is from the line above 
         controller.Move(veclocity * Time.deltaTime);
 
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
        
     }
 }
