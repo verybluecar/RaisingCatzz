@@ -19,12 +19,7 @@ public class ESCMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_isOpen)
-            {
-                // Close the menu
-                CloseESCMenu();
-            }
-            else
+           
             {
                 // Open the menu
                 OpenESCMenu();

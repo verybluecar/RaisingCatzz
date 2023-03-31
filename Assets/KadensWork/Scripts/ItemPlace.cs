@@ -11,8 +11,8 @@ public class ItemPlace : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                // Check if the hit object is on the "Ground" layer
-                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                // Check if the hit object is on the "Ground" layer and has the "Pickupable" tag
+                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground") && hit.transform.gameObject.CompareTag("Pickupable"))
                 {
                     // Loop through all child objects of this object
                     foreach (Transform child in transform)
@@ -28,6 +28,7 @@ public class ItemPlace : MonoBehaviour
         }
     }
 }
+
 
 
 

@@ -14,17 +14,18 @@ public class Bed : MonoBehaviour
     private bool canSleep = false;
     private int daysSlept = 0;
 
-   
+
 
     public void Start()
     {
         // Set canvas and text to inactive
         sleepCanvas.SetActive(false);
         daysText.gameObject.SetActive(true);
-        
-        
 
+        // Find player object by tag
+        playerObject = GameObject.FindGameObjectWithTag("Player");
     }
+
 
     // Update is called once per frame
     void Update()

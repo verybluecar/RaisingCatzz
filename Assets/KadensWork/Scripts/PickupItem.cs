@@ -62,14 +62,26 @@ public class PickupItem : MonoBehaviour
         }
         else
         {
-            // Check if the player drops the item
-            if (Input.GetKeyDown(KeyCode.E))
+            // Check if the current pickup item is still a child of the hand object
+            if (currentPickupItem.parent == handObject)
             {
-                // Make the item non-kinematic
-                currentPickupItem.GetComponent<Rigidbody>().isKinematic = false;
+                // Check if the player drops the item
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    // Make the item non-kinematic
+                    currentPickupItem.GetComponent<Rigidbody>().isKinematic = false;
 
-                // Drop the item from the hand
-                currentPickupItem.parent = null;
+                    // Drop the item from the hand
+                    currentPickupItem.parent = null;
+
+                    // Reset the current pickup item
+                    currentPickupItem = null;
+                }
+            }
+            else
+            {
+                // Make the item non-kinematic if it's no longer a child of the hand object
+                currentPickupItem.GetComponent<Rigidbody>().isKinematic = false;
 
                 // Reset the current pickup item
                 currentPickupItem = null;
@@ -77,6 +89,7 @@ public class PickupItem : MonoBehaviour
         }
     }
 }
+
 
 
 
