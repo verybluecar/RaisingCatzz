@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ItemPlace : MonoBehaviour
 {
+    public float yOffset = 0.5f;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -11,23 +13,18 @@ public class ItemPlace : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                // Check if the hit object is on the "Ground" layer and has the "Pickupable" tag
-                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground") && hit.transform.gameObject.CompareTag("Pickupable"))
-                {
-                    // Loop through all child objects of this object
-                    foreach (Transform child in transform)
-                    {
-                        // Set the child's position to the hit point
-                        child.position = hit.point;
+                // Set the child's position to the hit point
+                Vector3 newPosition = new Vector3(hit.point.x, hit.point.y + yOffset, hit.point.z);
+                transform.position = newPosition;
 
-                        // Make the child object unparented
-                        child.parent = null;
-                    }
-                }
+                // Make the object unparented
+                transform.parent = null;
             }
         }
     }
 }
+
+
 
 
 

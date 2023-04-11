@@ -6,7 +6,8 @@ public class CanvasSwitch : MonoBehaviour
     public Canvas canvas;
 
     private GameObject player;
-    private GameObject camera;
+    private new GameObject camera;
+
 
     private void Start()
     {

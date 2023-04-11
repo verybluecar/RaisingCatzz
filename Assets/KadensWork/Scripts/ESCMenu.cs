@@ -6,7 +6,7 @@ public class ESCMenu : MonoBehaviour
     public GameObject player;
     public GameObject mainCamera;
 
-    private bool _isOpen = false;
+    public bool isOpen = false;
     private CursorLockMode _previousLockMode;
 
     private void Start()
@@ -38,7 +38,7 @@ public class ESCMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         // Set the menu as open
-        _isOpen = true;
+        isOpen = true;
 
         // Disable player and camera movement
         player.GetComponent<PlayerMove>().enabled = false;
@@ -55,7 +55,7 @@ public class ESCMenu : MonoBehaviour
         Cursor.lockState = _previousLockMode;
 
         // Set the menu as closed
-        _isOpen = false;
+        isOpen = false;
 
         // Enable player and camera movement
         player.GetComponent<PlayerMove>().enabled = true;
