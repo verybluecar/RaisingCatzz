@@ -74,6 +74,7 @@ public class CatEat : MonoBehaviour
     private void Die()
     {
         Debug.Log("The cat has died of hunger!");
+        Destroy(gameObject);
         // Add any death-related actions here, like disabling the script or playing a death animation
     }
 }

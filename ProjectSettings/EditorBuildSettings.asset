@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/KadensWork/Scenes/Level1.unity
-    guid: ab1dd696aae587d4ab08ab70415a8dca
+    path: Assets/KadensWork/Scenes/MainMenu.unity
+    guid: 0e1e3aceb528df042acefa04b41fee30
   - enabled: 1
-    path: Assets/KadensWork/Scenes/Shop.unity
-    guid: 0044dc435e647a84ea06f505e4d4debe
+    path: Assets/KadensWork/Scenes/Level1.unity
+    guid: 7694573253795e94f8629487d89b57ed
   m_configObjects: {}
